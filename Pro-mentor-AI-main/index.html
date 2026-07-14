@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProMentor AI — Intelligent Project Development Platform</title>
+  <meta name="description" content="AI-powered project development platform that generates comprehensive documentation, tech stack, UML diagrams, SRS, and more — instantly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ LANDING PAGE ═══════════════════════════════════════ -->
+<section id="page-landing" class="page active">
+  <nav class="navbar" id="main-nav">
+    <div class="nav-brand">
+      <div class="brand-icon-wrap"><span class="brand-icon-text">PM</span></div>
+      <span class="brand-name">ProMentor <span class="grad">AI</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#features-section" class="nav-link">Features</a>
+      <a href="#how-section" class="nav-link">How It Works</a>
+      <select id="theme-select" aria-label="Theme selector" class="theme-select">
+        <option value="system">Theme: System</option>
+        <option value="dark">Theme: Dark</option>
+        <option value="light">Theme: Light</option>
+        <option value="warm">Theme: Warm</option>
+        <option value="minimal">Theme: Minimal</option>
+      </select>
+      <button class="btn btn-ghost" id="open-onboarding-btn">✨ Onboarding</button>
+      <button class="btn btn-outline" id="nav-login-btn">Login</button>
+      <button class="btn btn-primary" id="nav-get-started-btn">Get Started Free</button>
+    </div>
+    <button class="hamburger" id="hamburger">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-pulse"></span>
+        <span>Powered by OpenAI GPT-4o-mini</span>
+      </div>
+      <h1 class="hero-title">
+        Transform Your<br/><span class="grad">Project Idea</span><br/>Into a Complete Blueprint
+      </h1>
+      <p class="hero-sub">
+        ProMentor AI analyzes your project abstract and instantly generates a full development package —
+        SRS, UML diagrams, tech stack, source code structure, test cases, viva Q&A, and an AI mentor to guide you.
+      </p>
+      <div class="hero-cta-row">
+        <button class="btn btn-primary btn-xl" id="hero-start-btn">
+          <span>🚀 Start Your Project</span>
+        </button>
+        <button class="btn btn-ghost btn-xl" id="hero-demo-btn">▶ See Demo</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-num">10+</span><span class="hstat-lbl">Output Sections</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-num">15+</span><span class="hstat-lbl">Project Domains</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-num">AI</span><span class="hstat-lbl">Live Mentor Chat</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-num">Free</span><span class="hstat-lbl">To Use</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-card glass-card fc1">
+        <div class="fc-header">
+          <span class="fc-dot red"></span><span class="fc-dot yellow"></span><span class="fc-dot green"></span>
+          <span class="fc-title">ProMentor AI Analysis</span>
+        </div>
+        <div class="fc-body">
+          <div class="fc-row"><div class="fc-ico" style="background:rgba(99,102,241,.2)">📊</div><div class="fc-info"><div class="fc-lbl">Tech Stack</div><div class="fc-val">React + Node.js + MongoDB</div></div><span class="badge-done">✓ Done</span></div>
+          <div class="fc-row"><div class="fc-ico" style="background:rgba(139,92,246,.2)">📄</div><div class="fc-info"><div class="fc-lbl">SRS Document</div><div class="fc-val">12 sections generated</div></div><span class="badge-done">✓ Done</span></div>
+          <div class="fc-row"><div class="fc-ico" style="background:rgba(16,185,129,.2)">📐</div><div class="fc-info"><div class="fc-lbl">UML Diagrams</div><div class="fc-val">Class + Sequence + ER</div></div><span class="badge-done">✓ Done</span></div>
+          <div class="fc-row"><div class="fc-ico" style="background:rgba(245,158,11,.2)">✨</div><div class="fc-info"><div class="fc-lbl">AI Features</div><div class="fc-val">8 suggestions ready</div></div><span class="badge-pulse-sm">Generating...</span></div>
+        </div>
+      </div>
+      <div class="floating-card fc2 glass-card">
+        <div class="fc-mini-title">🤖 AI Mentor</div>
+        <div class="fc-mini-msg">How should I structure the database?</div>
+        <div class="fc-mini-resp">Use a normalized schema with User, Project, and Module tables. Add indexing on frequently queried fields...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features-section" class="features-sec">
+    <div class="sec-header">
+      <div class="sec-badge">Features</div>
+      <h2 class="sec-title">Everything You Need, All in One Place</h2>
+      <p class="sec-sub">From abstract to implementation-ready blueprint in minutes</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card glass-card"><div class="feat-ico">🧠</div><h3>AI Project Analysis</h3><p>Deep analysis of your abstract generates objectives, scope, modules, and outcomes tailored to your domain.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">⚙️</div><h3>Tech Stack Recommendations</h3><p>Intelligent picks for languages, frameworks, databases, APIs, AI/ML libraries, and deployment platforms.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">📐</div><h3>UML & Architecture Diagrams</h3><p>Auto-generated Use Case, Class, Sequence, ER diagrams and system architecture using Mermaid.js.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">📄</div><h3>SRS Document</h3><p>Complete Software Requirements Specification with functional, non-functional requirements and constraints.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">💻</div><h3>Source Code Structure</h3><p>Recommended folder hierarchy, key files, API endpoints, and architectural patterns for your project.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">🧪</div><h3>Test Cases</h3><p>Unit, integration, and system test cases covering all major modules and edge cases.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">✨</div><h3>AI Feature Suggestions</h3><p>Innovative enhancement ideas (AI integration, IoT, cloud, security) — select to incorporate into your plan.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">🎓</div><h3>Viva Q&A</h3><p>15+ project-specific viva questions with detailed answers for academic presentations and reviews.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">🎴</div><h3>Presentation Slides</h3><p>Ready-made slide outline covering problem, solution, architecture, demo, and future scope.</p></div>
+      <div class="feat-card glass-card"><div class="feat-ico">🤖</div><h3>AI Mentor Chat</h3><p>Real-time AI mentor that knows your project — get code help, explanations, and best practices.</p></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-section" class="how-sec">
+    <div class="sec-header">
+      <div class="sec-badge">Process</div>
+      <h2 class="sec-title">How ProMentor AI Works</h2>
+      <p class="sec-sub">Three steps from idea to implementation-ready blueprint</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-card glass-card">
+        <div class="step-num">01</div>
+        <div class="step-ico">📝</div>
+        <h3>Submit Your Project</h3>
+        <p>Enter your project title, choose a domain, and describe your idea in the abstract.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card glass-card">
+        <div class="step-num">02</div>
+        <div class="step-ico">🤖</div>
+        <h3>AI Analyzes</h3>
+        <p>OpenAI GPT-4o-mini processes your input and generates a comprehensive, domain-specific project package.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card glass-card">
+        <div class="step-num">03</div>
+        <div class="step-ico">🚀</div>
+        <h3>Build & Export</h3>
+        <p>Review all sections, select AI features, chat with your mentor, and export your full report.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <div class="brand-icon-wrap sm"><span class="brand-icon-text">PM</span></div>
+      <span class="brand-name">ProMentor <span class="grad">AI</span></span>
+    </div>
+    <p class="footer-tag">Transforming project ideas into implementation-ready solutions.</p>
+    <p class="footer-copy">© 2025 ProMentor AI. Powered by OpenAI GPT-4o-mini.</p>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════════════ AUTH PAGE ═══════════════════════════════════════ -->
+<section id="page-auth" class="page">
+  <div class="auth-bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+  <div class="auth-wrap">
+    <div class="auth-card glass-card">
+      <div class="auth-logo">
+        <div class="brand-icon-wrap"><span class="brand-icon-text">PM</span></div>
+        <span class="brand-name">ProMentor <span class="grad">AI</span></span>
+      </div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login">Login</button>
+        <button class="auth-tab" id="tab-register">Register</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="form-login" class="auth-form active" autocomplete="on">
+        <div class="fg">
+          <label>Email Address</label>
+          <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email" required />
+        </div>
+        <div class="fg">
+          <label>Password</label>
+          <div class="input-icon-wrap">
+            <input type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" required />
+            <button type="button" class="eye-btn" data-target="login-password">👁</button>
+          </div>
+        </div>
+        <div id="login-error" class="auth-msg error hidden"></div>
+        <button type="submit" class="btn btn-primary btn-full" id="login-submit">
+          <span id="login-btn-text">Login</span>
+          <span class="btn-spin hidden" id="login-spin"></span>
+        </button>
+        <p class="auth-switch">Don't have an account? <button type="button" class="link-btn" onclick="switchTab('register')">Register here</button></p>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="form-register" class="auth-form" autocomplete="on">
+        <div class="fg">
+          <label>Full Name</label>
+          <input type="text" id="reg-name" placeholder="Your full name" autocomplete="name" required />
+        </div>
+        <div class="fg">
+          <label>Email Address</label>
+          <input type="email" id="reg-email" placeholder="you@example.com" autocomplete="email" required />
+        </div>
+        <div class="fg">
+          <label>Password</label>
+          <div class="input-icon-wrap">
+            <input type="password" id="reg-password" placeholder="Min 6 characters" autocomplete="new-password" required />
+            <button type="button" class="eye-btn" data-target="reg-password">👁</button>
+          </div>
+        </div>
+        <div id="reg-error" class="auth-msg error hidden"></div>
+        <div id="reg-success" class="auth-msg success hidden"></div>
+        <button type="submit" class="btn btn-primary btn-full" id="reg-submit">
+          <span id="reg-btn-text">Create Account</span>
+          <span class="btn-spin hidden" id="reg-spin"></span>
+        </button>
+        <p class="auth-switch">Already have an account? <button type="button" class="link-btn" onclick="switchTab('login')">Login here</button></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ DASHBOARD PAGE ═══════════════════════════════════════ -->
+<section id="page-dashboard" class="page">
+  <nav class="app-nav">
+    <div class="nav-brand">
+      <div class="brand-icon-wrap"><span class="brand-icon-text">PM</span></div>
+      <span class="brand-name">ProMentor <span class="grad">AI</span></span>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-ghost btn-sm" id="dash-settings-btn">⚙️ Settings</button>
+      <div class="user-pill">
+        <div class="user-av" id="dash-user-av">U</div>
+        <span id="dash-user-name">User</span>
+      </div>
+      <button class="btn btn-outline btn-sm" id="logout-btn">Logout</button>
+    </div>
+  </nav>
+  <div class="dash-body">
+    <div class="dash-top">
+      <div>
+        <h1 class="dash-title">Welcome back, <span class="grad" id="dash-greeting">User</span>!</h1>
+        <p class="dash-sub">Ready to build something amazing today?</p>
+      </div>
+      <button class="btn btn-primary btn-lg" id="new-proj-btn">✦ New Project</button>
+    </div>
+    <!-- Stats -->
+    <div class="dash-stats">
+      <div class="dstat glass-card"><div class="dstat-ico">📁</div><div class="dstat-val" id="s-projects">0</div><div class="dstat-lbl">Projects Created</div></div>
+      <div class="dstat glass-card"><div class="dstat-ico">📄</div><div class="dstat-val" id="s-docs">0</div><div class="dstat-lbl">Docs Generated</div></div>
+      <div class="dstat glass-card"><div class="dstat-ico">💬</div><div class="dstat-val" id="s-chats">0</div><div class="dstat-lbl">Mentor Chats</div></div>
+      <div class="dstat glass-card"><div class="dstat-ico">⭐</div><div class="dstat-val" id="s-features">0</div><div class="dstat-lbl">Features Selected</div></div>
+    </div>
+    <!-- Projects List -->
+    <div class="recent-wrap">
+      <div class="recent-hdr"><h2>Recent Projects</h2></div>
+      <div id="proj-list" class="proj-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ WIZARD PAGE ═══════════════════════════════════════ -->
+<section id="page-wizard" class="page">
+  <nav class="app-nav">
+    <div class="nav-brand">
+      <div class="brand-icon-wrap"><span class="brand-icon-text">PM</span></div>
+      <span class="brand-name">ProMentor <span class="grad">AI</span></span>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-ghost btn-sm" id="wiz-settings-btn">⚙️ Settings</button>
+      <button class="btn btn-ghost btn-sm" id="wiz-back-btn">← Dashboard</button>
+    </div>
+  </nav>
+  <div class="wizard-body">
+    <!-- Progress Bar -->
+    <div class="wiz-progress">
+      <div class="wiz-step-item active" id="wp1"><div class="wp-dot">1</div><span>Project Info</span></div>
+      <div class="wp-line" id="wpl1"></div>
+      <div class="wiz-step-item" id="wp2"><div class="wp-dot">2</div><span>Preferences</span></div>
+      <div class="wp-line" id="wpl2"></div>
+      <div class="wiz-step-item" id="wp3"><div class="wp-dot">3</div><span>AI Analysis</span></div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="wiz-panel active" id="wiz-step-1">
+      <div class="wiz-card glass-card">
+        <h2 class="wiz-title">Tell Us About Your Project</h2>
+        <p class="wiz-sub">The more detail you provide, the better your AI-generated package will be</p>
+        <div class="fg">
+          <label>Project Title <span class="req">*</span></label>
+          <input type="text" id="w-title" placeholder="e.g., Smart Healthcare Management System" maxlength="120" />
+          <span class="fhint">Clear, descriptive title (max 120 chars)</span>
+        </div>
+        <div class="fg">
+          <label>Project Domain <span class="req">*</span></label>
+          <select id="w-domain">
+            <option value="">Select a domain...</option>
+            <option value="Web Application">🌐 Web Application</option>
+            <option value="Mobile Application">📱 Mobile Application</option>
+            <option value="AI / Machine Learning">🧠 AI / Machine Learning</option>
+            <option value="Internet of Things (IoT)">🔌 Internet of Things (IoT)</option>
+            <option value="Blockchain">🔗 Blockchain</option>
+            <option value="Cloud Computing">☁️ Cloud Computing</option>
+            <option value="Cybersecurity">🔒 Cybersecurity</option>
+            <option value="Data Science & Analytics">📊 Data Science & Analytics</option>
+            <option value="Healthcare">🏥 Healthcare</option>
+            <option value="Education Technology">📚 Education Technology</option>
+            <option value="E-Commerce">🛒 E-Commerce</option>
+            <option value="Finance & FinTech">💰 Finance & FinTech</option>
+            <option value="Gaming">🎮 Gaming</option>
+            <option value="Social Media Platform">📣 Social Media Platform</option>
+            <option value="Smart City">🏙️ Smart City</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Project Abstract <span class="req">*</span></label>
+          <textarea id="w-abstract" placeholder="Describe your project in detail — its goals, features, target users, the problem it solves, and the expected outcomes..." rows="7" maxlength="3000"></textarea>
+          <span class="fhint char-count-hint"><span id="abs-count">0</span>/3000 characters</span>
+        </div>
+        <button class="btn btn-primary btn-lg" id="s1-next">Next: Preferences →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="wiz-panel" id="wiz-step-2">
+      <div class="wiz-card glass-card">
+        <h2 class="wiz-title">Project Preferences</h2>
+        <p class="wiz-sub">Help the AI tailor recommendations to your context</p>
+        <div class="fg">
+          <label>Project Type</label>
+          <div class="radio-grid">
+            <label class="radio-card"><input type="radio" name="proj-type" value="Academic" checked /><div class="rc-inner"><span>🎓</span><span>Academic</span></div></label>
+            <label class="radio-card"><input type="radio" name="proj-type" value="Industry" /><div class="rc-inner"><span>🏢</span><span>Industry</span></div></label>
+            <label class="radio-card"><input type="radio" name="proj-type" value="Research" /><div class="rc-inner"><span>🔬</span><span>Research</span></div></label>
+            <label class="radio-card"><input type="radio" name="proj-type" value="Startup" /><div class="rc-inner"><span>🚀</span><span>Startup</span></div></label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label>Team Size</label>
+            <select id="w-team">
+              <option value="1 developer">Solo Developer</option>
+              <option value="2-3 developers">2–3 Members</option>
+              <option value="4-6 developers" selected>4–6 Members</option>
+              <option value="7+ developers">7+ Members</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Timeline</label>
+            <select id="w-timeline">
+              <option value="1 month">1 Month</option>
+              <option value="3 months" selected>3 Months</option>
+              <option value="6 months">6 Months</option>
+              <option value="1 year">1 Year</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Technology Preferences <span class="opt-tag">Optional</span></label>
+          <input type="text" id="w-tech" placeholder="e.g., React, Python, AWS, PostgreSQL (comma separated)" />
+          <span class="fhint">Leave blank for full AI recommendations</span>
+        </div>
+        <div class="wiz-btn-row">
+          <button class="btn btn-outline" id="s2-prev">← Back</button>
+          <button class="btn btn-primary btn-lg" id="s2-next">🤖 Analyze with AI</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3: AI ANALYSIS -->
+    <div class="wiz-panel" id="wiz-step-3">
+      <div class="wiz-card glass-card analysis-card">
+        <div id="ai-loading">
+          <div class="ai-spinner-wrap">
+            <div class="ai-ring r1"></div>
+            <div class="ai-ring r2"></div>
+            <div class="ai-ring r3"></div>
+            <div class="ai-brain">🧠</div>
+          </div>
+          <h2 class="loading-title">AI is Analyzing Your Project</h2>
+          <p class="loading-sub" id="loading-msg">Initializing analysis engine...</p>
+          <div class="loading-steps-wrap">
+            <div class="load-step" id="ls0">📊 Analyzing project scope & objectives...</div>
+            <div class="load-step" id="ls1">⚙️ Selecting optimal technology stack...</div>
+            <div class="load-step" id="ls2">📐 Generating UML & architecture diagrams...</div>
+            <div class="load-step" id="ls3">📄 Writing SRS documentation...</div>
+            <div class="load-step" id="ls4">💻 Structuring source code layout...</div>
+            <div class="load-step" id="ls5">✨ Suggesting innovative AI features...</div>
+            <div class="load-step" id="ls6">🎓 Creating viva questions & answers...</div>
+          </div>
+        </div>
+        <div id="ai-error" class="hidden ai-error-wrap">
+          <div class="err-ico">⚠️</div>
+          <h3>Analysis Failed</h3>
+          <p id="err-msg">Something went wrong. Please try again.</p>
+          <button class="btn btn-primary" id="retry-btn">Retry Analysis</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ REPORT PAGE ═══════════════════════════════════════ -->
+<section id="page-report" class="page">
+  <nav class="app-nav">
+    <div class="nav-brand">
+      <div class="brand-icon-wrap"><span class="brand-icon-text">PM</span></div>
+      <span class="brand-name">ProMentor <span class="grad">AI</span></span>
+    </div>
+    <div class="nav-right">
+      <button class="btn btn-ghost btn-sm" id="rpt-settings-btn">⚙️ Settings</button>
+      <button class="btn btn-outline btn-sm" id="rpt-export-btn">📄 Export PDF</button>
+      <button class="btn btn-ghost btn-sm" id="rpt-dash-btn">← Dashboard</button>
+    </div>
+  </nav>
+
+  <div class="report-body">
+    <!-- Report Header -->
+    <div class="rpt-header glass-card">
+      <div class="rpt-title-area">
+        <div class="rpt-domain-tag" id="rpt-domain">Domain</div>
+        <h1 class="rpt-project-title" id="rpt-title">Project Title</h1>
+        <p class="rpt-meta" id="rpt-meta">Generated by ProMentor AI</p>
+      </div>
+      <div class="rpt-quick-stats">
+        <div class="rqs"><span class="rqs-val" id="rqs-mod">0</span><span class="rqs-lbl">Modules</span></div>
+        <div class="rqs"><span class="rqs-val" id="rqs-tech">0</span><span class="rqs-lbl">Technologies</span></div>
+        <div class="rqs"><span class="rqs-val" id="rqs-viva">0</span><span class="rqs-lbl">Viva Q&amp;As</span></div>
+        <div class="rqs"><span class="rqs-val" id="rqs-feat">0</span><span class="rqs-lbl">AI Features</span></div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="rpt-tabs-wrap">
+      <div class="rpt-tabs" id="rpt-tabs">
+        <button class="rtab active" data-tab="overview">📊 Overview</button>
+        <button class="rtab" data-tab="techstack">⚙️ Tech Stack</button>
+        <button class="rtab" data-tab="srs">📄 SRS</button>
+        <button class="rtab" data-tab="diagrams">📐 Diagrams</button>
+        <button class="rtab" data-tab="codestructure">💻 Code</button>
+        <button class="rtab" data-tab="testcases">🧪 Tests</button>
+        <button class="rtab" data-tab="features">✨ AI Features</button>
+        <button class="rtab" data-tab="slides">🎴 Slides</button>
+        <button class="rtab" data-tab="fullreport">📑 Full Report</button>
+        <button class="rtab" data-tab="viva">🎓 Viva Q&amp;A</button>
+      </div>
+      <div class="tab-panels">
+        <div class="tab-panel active" id="tp-overview"></div>
+        <div class="tab-panel" id="tp-techstack"></div>
+        <div class="tab-panel" id="tp-srs"></div>
+        <div class="tab-panel" id="tp-diagrams"></div>
+        <div class="tab-panel" id="tp-codestructure"></div>
+        <div class="tab-panel" id="tp-testcases"></div>
+        <div class="tab-panel" id="tp-features"></div>
+        <div class="tab-panel" id="tp-slides"></div>
+        <div class="tab-panel" id="tp-fullreport"></div>
+        <div class="tab-panel" id="tp-viva"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ AI MENTOR CHAT ═══════════════════════════════════════ -->
+<div id="chat-widget" class="chat-widget hidden">
+  <button class="chat-fab" id="chat-fab">
+    <span class="chat-fab-icon">🤖</span>
+    <span class="chat-fab-label">AI Mentor</span>
+    <span class="chat-fab-badge hidden" id="chat-badge">●</span>
+  </button>
+  <div class="chat-panel hidden" id="chat-panel">
+    <div class="chat-hdr">
+      <div class="chat-hdr-info">
+        <div class="chat-av">🤖</div>
+        <div><div class="chat-name">ProMentor AI Mentor</div><div class="chat-online">● Online — Project-aware</div></div>
+      </div>
+      <button class="chat-close" id="chat-close">✕</button>
+    </div>
+    <div class="chat-msgs" id="chat-msgs">
+      <div class="chat-msg assistant">
+        <div class="msg-av">🤖</div>
+        <div class="msg-bubble">👋 Hi! I'm your AI Mentor. I have full context of your project and I'm here to help with technical questions, code explanations, best practices, and more. What would you like to know?</div>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <div class="chat-suggestions" id="chat-suggs">
+        <button class="chat-sugg" onclick="useSuggestion(this)">How do I start development?</button>
+        <button class="chat-sugg" onclick="useSuggestion(this)">Explain the architecture</button>
+        <button class="chat-sugg" onclick="useSuggestion(this)">What are the best practices?</button>
+      </div>
+      <div class="chat-input-row">
+        <textarea id="chat-input" placeholder="Ask your AI Mentor anything..." rows="1"></textarea>
+        <button class="chat-send-btn" id="chat-send">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div id="settings-modal" class="modal-backdrop hidden">
+  <div class="modal-card glass-card">
+    <div class="modal-hdr">
+      <h2>⚙️ System Settings</h2>
+      <button class="modal-close" id="settings-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="fg" style="margin-bottom: 0;">
+        <label>OpenAI API Key</label>
+        <input type="password" id="set-openai-key" placeholder="sk-proj-..." />
+        <span class="fhint" style="margin-top: 8px; line-height: 1.5;">Enter your API key to run real analysis. If left blank, the app will run in high-fidelity offline mode automatically. Saved locally in your browser.</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" id="settings-cancel">Cancel</button>
+      <button class="btn btn-primary" id="settings-save">Save Settings</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast hidden"><span id="toast-msg"></span></div>
+
+<!-- Print Overlay -->
+<div id="print-area" class="hidden"></div>
+
+<!-- Onboarding Modal -->
+<div id="onboarding-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="onboard-title">
+  <div class="modal-dialog glass-card">
+    <button class="modal-close" id="onboard-close">✕</button>
+    <h2 id="onboard-title">Welcome to ProMentor AI</h2>
+    <p class="modal-sub">Quick tour: learn how to write a great abstract, run the AI analysis, and export your report.</p>
+    <ol class="onboard-steps">
+      <li><strong>Step 1:</strong> Click "Start Your Project" and provide a clear project title and domain.</li>
+      <li><strong>Step 2:</strong> Add team size, timeline, and optional tech preferences.</li>
+      <li><strong>Step 3:</strong> Run AI Analysis — review the Report and use the AI Mentor chat.</li>
+    </ol>
+    <div class="modal-actions">
+      <button class="btn btn-outline" id="onboard-skip">Skip</button>
+      <button class="btn btn-primary" id="onboard-done">Start Guided Run</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

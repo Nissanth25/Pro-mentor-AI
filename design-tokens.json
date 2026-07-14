@@ -1,0 +1,88 @@
+{
+  "name": "ProMentor AI - Design Tokens",
+  "version": "1.0.0",
+  "global": {
+    "fontFamily": {
+      "base": "Inter, sans-serif",
+      "heading": "Outfit, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    }
+  },
+  "colors": {
+    "background": "#071021",
+    "surface": "#0b1728",
+    "text": "#e9f0ff",
+    "muted": "#9fb3d6",
+    "accent1": "#ff7a59",
+    "accent2": "#00d4c8",
+    "accent3": "#6c5ce7",
+    "accent4": "#ffd166",
+    "success": "#22c55e",
+    "warn": "#f59e0b",
+    "danger": "#ff6b6b"
+  },
+  "gradients": {
+    "primary": "linear-gradient(110deg, #ff7a59 0%, #00d4c8 100%)",
+    "secondary": "linear-gradient(110deg, #6c5ce7 0%, #00a3ff 100%)"
+  },
+  "radii": {
+    "sm": "8px",
+    "md": "12px",
+    "lg": "18px",
+    "xl": "26px"
+  },
+  "shadows": {
+    "base": "0 6px 26px rgba(3,12,30,0.6)",
+    "lg": "0 12px 56px rgba(3,12,30,0.75)",
+    "glow": "0 0 40px rgba(0,163,255,0.08)"
+  },
+  "spacing": {
+    "xs": "6px",
+    "sm": "12px",
+    "md": "18px",
+    "lg": "24px",
+    "xl": "40px"
+  },
+  "components": {
+    "button": {
+      "borderRadius": "12px",
+      "padding": "10px 20px",
+      "fontWeight": 600
+    },
+    "card": {
+      "background": "rgba(255,255,255,0.02)",
+      "borderRadius": "18px",
+      "backdrop": "blur(10px)"
+    }
+  },
+  "themes": {
+    "warm": {
+      "background": "#12060a",
+      "text": "#fff6f3",
+      "muted": "#ffd9c7",
+      "accent1": "#ff6b4a",
+      "accent2": "#ffb86b"
+    },
+    "dark": {
+      "background": "#071021",
+      "text": "#e9f0ff",
+      "muted": "#9fb3d6",
+      "accent1": "#ff7a59",
+      "accent2": "#00d4c8"
+    },
+    "light": {
+      "background": "#ffffff",
+      "text": "#0b1220",
+      "muted": "#6b7280",
+      "accent1": "#0ea5a4",
+      "accent2": "#0ea5ff"
+    },
+    "minimal": {
+      "background": "#ffffff",
+      "text": "#0b1220",
+      "muted": "#6b7280",
+      "accent1": "#0ea5a4",
+      "accent2": "#0ea5ff"
+    }
+  }
+}
